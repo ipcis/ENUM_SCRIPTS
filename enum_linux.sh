@@ -1,5 +1,23 @@
 #!/bin/bash
 
+
+
+userdir="$HOME"
+searchfiles=("local.txt" "proof.txt")
+
+cd "$userdir"
+
+for file in "${searchfiles[@]}"; do
+    if [ -f "$file" ]; then
+        echo "Die Datei '$file' wurde im Benutzerverzeichnis gefunden."
+    else
+        echo "Die Datei '$file' wurde NICHT im Benutzerverzeichnis gefunden."
+    fi
+done
+
+
+echo
+
 echo "Operating System Information:"
 uname -a
 
