@@ -28,6 +28,11 @@ dpkg -l
 
 echo
 
+echo "History:"
+history
+
+echo
+
 echo "Network Information:"
 ifconfig -a
 ip addr
