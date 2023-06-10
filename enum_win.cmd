@@ -1,5 +1,22 @@
 @echo off
 
+echo Search flags:
+
+set "userdir=%USERPROFILE%"
+set "searchfiles=local.txt proof.txt"
+
+cd "%userdir%"
+
+for %%F in (%searchfiles%) do (
+    if exist "%%F" (
+        echo Die Datei "%%F" wurde im Benutzerverzeichnis gefunden.
+    ) else (
+        echo Die Datei "%%F" wurde NICHT im Benutzerverzeichnis gefunden.
+    )
+)
+
+echo.
+
 echo Operating System Information:
 systeminfo
 
