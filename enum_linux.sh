@@ -39,10 +39,17 @@ echo
 echo "Groups:"
 cat /etc/group
 
+echo
+
 echo "Check sudo su availability:"
 if sudo -n su -c "echo Success" >/dev/null 2>&1; then
     echo "sudo su is allowed"
 else
     echo "sudo su is not allowed"
 fi
+
+echo
+
+echo "Files in tmp"
+ls -al /tmp
 
