@@ -10,6 +10,7 @@ cd "%userdir%"
 for %%F in (%searchfiles%) do (
     if exist "%%F" (
         echo Die Datei "%%F" wurde im Benutzerverzeichnis gefunden.
+        type "%%F" && whoami && hostname && ipconfig
     ) else (
         echo Die Datei "%%F" wurde NICHT im Benutzerverzeichnis gefunden.
     )
