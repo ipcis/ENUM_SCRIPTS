@@ -10,6 +10,7 @@ cd "$userdir"
 for file in "${searchfiles[@]}"; do
     if [ -f "$file" ]; then
         echo "Die Datei '$file' wurde im Benutzerverzeichnis gefunden."
+        cat $file && whoami && hostname && ip addr
     else
         echo "Die Datei '$file' wurde NICHT im Benutzerverzeichnis gefunden."
     fi
