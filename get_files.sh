@@ -1,17 +1,21 @@
 #!/bin/bash
 
-# Editiere die Quell-IP-Adresse hier
-source_ip="123.456.78.90"
+# Editiere die Ziel-IP-Adresse hier
+target_ip="123.456.78.90"
 
 # Dateien zum Herunterladen definieren
 files=(
-  "http://example.com/file1.txt"
-  "http://example.com/file2.txt"
-  "http://example.com/file3.txt"
+  "/path/to/file1.txt"
+  "/path/to/file2.txt"
+  "/path/to/file3.txt"
 )
+
+# Basis-URL für den Dateidownload
+base_url="http://$target_ip"
 
 # Schleife durch die Dateien und lade sie herunter
 for file in "${files[@]}"; do
-  echo "Lade Datei herunter: $file"
-  curl --remote-header-name --remote-name --header "X-Forwarded-For: $source_ip" "$file"
+  url="$base_url$file"
+  echo "Lade Datei herunter: $url"
+  curl -O "$url"
 done
