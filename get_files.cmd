@@ -1,17 +1,21 @@
 @echo off
 
-:: Editiere die Quell-IP-Adresse hier
-set source_ip=123.456.78.90
+:: Editiere die Ziel-IP-Adresse hier
+set target_ip=123.456.78.90
 
 :: Dateien zum Herunterladen definieren
 set files=(
-  "http://example.com/file1.txt"
-  "http://example.com/file2.txt"
-  "http://example.com/file3.txt"
+  "/path/to/file1.txt"
+  "/path/to/file2.txt"
+  "/path/to/file3.txt"
 )
+
+:: Basis-URL für den Dateidownload
+set base_url=http://%target_ip%
 
 :: Schleife durch die Dateien und lade sie herunter
 for %%i in %files% do (
-  echo Lade Datei herunter: %%i
-  curl --remote-header-name --remote-name --header "X-Forwarded-For: %source_ip%" %%i
+  set url=%base_url%%%i
+  echo Lade Datei herunter: %url%
+  curl -O %url%
 )
